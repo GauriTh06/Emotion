@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Of emotions</title>
+    <style>
+        body{
+            background-color:#1a1a1a ;
+        }
+        .main-container{
+            width: 350px;
+            background-color: rgba(252, 197, 17, 0.4);
+            display:block;
+            margin: 80px auto;
+            padding: 20px ;
+            
+            border-radius: 10px;
+
+        }
+        .image{
+           width: 300px;
+           height: 300px;
+            margin: 20px auto;
+            display: block;
+
+        }
+        .h1{
+            text-align: center;
+            color:#000000;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            font-size: 35px;
+        }
+        .button{
+           border: none;
+           padding:0.5px 25px;
+           border-radius: 10px;
+           cursor: pointer;
+           margin: 6px 6px;
+           
+        }
+        .btn-container{
+            display:flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            
+        }
+        .btn-text{
+            font-family:cursive;
+            font-weight:500;
+        }
+        
+        
+        .bg-img{
+            background-image: url(bg-happy.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body id="body" class="bg-img">
+    
+    <div class="main-container" id="container">
+        <h1 class="h1" id="heading">EMOTIONS DISPLAY</h1>
+        <img src="happy1.jpg" class="image" id="img">
+        <div class="btn-container">
+            <button class="button  " onclick="toggle('anger')"><p class="btn-text">Anger</p></button>
+            <button class="button "  onclick="toggle('sad')"><p class="btn-text">Sad</p></button>
+            <button class="button "  onclick="toggle('fear')"><p class="btn-text">Fear</p></button>
+            <button class="button "  onclick="toggle('lonely')"><p class="btn-text">Lonely</p></button>
+            <button class="button "  onclick="toggle('surprise')"><p class="btn-text">Surprise</p></button>
+            <button class="button "  onclick="toggle('happy')"><p class="btn-text">Happy</p></button>
+
+                
+
+        </div>
+    </div>
+    <script>
+       function toggle(emotion){
+         const bulbImageElement=document.getElementById("img");
+         const bodyElement=document.getElementById("body");
+         const containerElement=document.getElementById("container");
+         const headingElement=document.getElementById("heading");
+
+         
+
+         if(emotion=="anger"){
+            bulbImageElement.src="angry.jpg";
+            bodyElement.style.backgroundImage="url(bg-angry.jpeg)";
+            containerElement.style.backgroundColor="rgba(124, 24, 24, 0.4)"; 
+            headingElement.style.color="#000000";
+
+         }
+         else if(emotion=="sad"){
+            bulbImageElement.src="sad.jpg";
+            bodyElement.style.backgroundImage="url(bg-sad.avif)";
+            containerElement.style.backgroundColor="rgba(69, 67, 67, 0.4)";
+            headingElement.style.color="#00000";
+         }
+         else if(emotion=="fear"){
+            bulbImageElement.src="fear.jpg";
+            bodyElement.style.backgroundImage="url(bg-fear.jpg)";
+            containerElement.style.backgroundColor="rgba(18, 18, 18, 0.4)";
+            headingElement.style.color="#fff";
+         }
+         else if(emotion=="lonely"){
+            bulbImageElement.src="lonely.jpg";
+            bodyElement.style.backgroundImage="url(bg-lonely.jpeg)";
+            containerElement.style.backgroundColor="rgba(64, 95, 148, 0.4)";
+            headingElement.style.color="#fff";
+         }
+
+         else if(emotion=="surprise"){
+            bulbImageElement.src="surprise1.jpg";
+            bodyElement.style.backgroundImage="url(bg-surprise2.jpg)";
+            containerElement.style.backgroundColor=" rgba(226, 125, 180, 0.4)";
+            headingElement.style.color="#000";
+         }
+         else {
+            bulbImageElement.src="happy1.jpg";
+            bodyElement.style.backgroundImage="url(bg-happy.jpg)";
+            containerElement.style.backgroundColor="rgba(252, 197, 17, 0.4)";
+            headingElement.style.color="#000";
+         }
+
+
+       }
+    </script>
+
+</body>
+</html>
